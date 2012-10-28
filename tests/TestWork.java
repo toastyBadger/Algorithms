@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import graphs.Floyd;
 import datastructures.LinkedList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -51,7 +52,7 @@ public class TestWork {
         }
     }
     
-    @Test
+    //@Test
     public void testLinkedList() {
         LinkedList<String> list = new LinkedList<String>();
         list.add("a");
@@ -61,5 +62,26 @@ public class TestWork {
         list.add("e");
         list.reverseList();
         list.write();
+    }
+    
+    @Test
+    public void testGraphWithMatrix() {
+        long[][] graph = {{0,1,7,1000,1000},{1,0,1000,4,1},{7,1000,0,1,1000},{1000,4,1,0,1},{1000,1,1000,1,0}};
+        long[][] paths = new long[5][5];
+        Floyd.calculate(graph, paths);
+        for (int i=0;i<graph.length;i++) {
+            for (int j=0;j<graph.length;j++) {
+                System.out.print(graph[i][j]+ " ");
+            }
+            System.out.println();
+        }
+            System.out.println();
+            System.out.println();
+        for (int i=0;i<paths.length;i++) {
+            for (int j=0;j<paths.length;j++) {
+                System.out.print(paths[i][j]+ " ");
+            }
+            System.out.println();
+        }
     }
 }
