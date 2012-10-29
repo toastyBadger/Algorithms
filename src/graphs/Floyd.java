@@ -22,7 +22,7 @@ public class Floyd {
                 for (int j = 0; j < size; j++) {
                     if (graph[i][j] > (graph[i][k] + graph[k][j])) {
                         graph[i][j] = graph[i][k] + graph[k][j];
-                        paths[i][j] = paths[k][j];//test
+                        paths[i][j] = k;
                     }
                 }
             }
