@@ -5,6 +5,7 @@
 
 import graphs.Floyd;
 import datastructures.LinkedList;
+import datastructures.MinPriorityQueue;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -64,7 +65,7 @@ public class TestWork {
         list.write();
     }
     
-    @Test
+    //@Test
     public void testGraphWithMatrix() {
         long[][] graph = {{0,1,7,1000,1000},{1,0,1000,4,1},{7,1000,0,1,1000},{1000,4,1,0,1},{1000,1,1000,1,0}};
         long[][] paths = new long[5][5];
@@ -82,6 +83,17 @@ public class TestWork {
                 System.out.print(paths[i][j]+ " ");
             }
             System.out.println();
+        }
+    }
+    
+    @Test
+    public void testPQ() {
+        Integer[] arr = {14,8,7,13,12,11,15,4,3,10,9,6,5,2,1,0};
+        MinPriorityQueue<Integer> pq = new MinPriorityQueue(arr.length);
+        pq.add(arr); 
+        //pq.write();
+        for (Integer item = pq.popMin(); item!=null; item = pq.popMin()) {
+            System.out.println(item);
         }
     }
 }
