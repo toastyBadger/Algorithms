@@ -88,9 +88,18 @@ public class TestWork {
     
     @Test
     public void testPQ() {
-        Integer[] arr = {14,8,7,13,12,11,15,4,3,10,9,6,5,2,1,0};
-        MinPriorityQueue<Integer> pq = new MinPriorityQueue(arr.length);
-        pq.add(arr); 
+        //Integer[] arr = {14,8,7,13,12,11,15,4,3,10,9,6,5,2,1,0};
+        MinPriorityQueue<Integer> pq = new MinPriorityQueue(10);
+        pq.add(new Integer(3)); 
+        pq.add(new Integer(4)); 
+        pq.add(new Integer(5)); 
+        pq.add(new Integer(0)); 
+        pq.add(new Integer(8)); 
+        pq.add(new Integer(1)); 
+        pq.add(new Integer(2)); 
+        pq.add(new Integer(6)); 
+        pq.add(new Integer(7)); 
+        pq.add(new Integer(9)); 
         //pq.write();
         for (Integer item = pq.popMin(); item!=null; item = pq.popMin()) {
             System.out.println(item);

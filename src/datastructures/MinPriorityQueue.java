@@ -45,6 +45,8 @@ public class MinPriorityQueue<T extends Comparable> {
                 pq[index] = pq[i];
                 pq[i] = temp;
                 i = index;
+            } else {
+                break;
             }
         }
     }
@@ -67,14 +69,15 @@ public class MinPriorityQueue<T extends Comparable> {
         T result = pq[0];
         if (N >= 0) {
             pq[0] = pq[N--];
-            pq[N+1] = null;
+            pq[N + 1] = null;
             sink(0);
         }
         return result;
     }
+
     public void write() {
-        for (int i=0;i<=N;i++) {
-            System.out.print(pq[i]+" ");
+        for (int i = 0; i <= N; i++) {
+            System.out.print(pq[i] + " ");
         }
         System.out.println();
     }
