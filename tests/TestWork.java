@@ -86,7 +86,7 @@ public class TestWork {
         }
     }
     
-    @Test
+    //@Test
     public void testPQ() {
         //Integer[] arr = {14,8,7,13,12,11,15,4,3,10,9,6,5,2,1,0};
         MinPriorityQueue<Integer> pq = new MinPriorityQueue(10);

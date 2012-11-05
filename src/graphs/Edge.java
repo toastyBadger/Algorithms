@@ -28,6 +28,16 @@ public class Edge implements Comparable<Edge> {
         return w;
     }
 
+    public int getOther(int vertice) {
+        if (vertice == w) {
+            return v; 
+        } else if (vertice == v) {
+            return w; 
+        } else {
+            return -1;
+        }
+    }
+
     public double getWeight() {
         return weight;
     }

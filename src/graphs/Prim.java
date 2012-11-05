@@ -18,14 +18,20 @@ public class Prim {
     int E;
     LinkedList<Edge>[] adj;
     MinPriorityQueue<Edge> pq;
-    Queue<Edge> trees;
+    Queue<Edge> tree;
+    byte[] used;
     
     
     public Prim(int vertices, int edges, LinkedList[] adjList) {
         V = vertices;
         E = edges;
         adj = adjList;
+        used = new byte[V];
     }
     
+    public void calculateMST() {
+        int current = 0;
+        
+    }
     
 }
