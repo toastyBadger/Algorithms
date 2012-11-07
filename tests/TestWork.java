@@ -6,6 +6,8 @@
 import graphs.Floyd;
 import datastructures.LinkedList;
 import datastructures.MinPriorityQueue;
+import graphs.Edge;
+import graphs.Prim;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,7 +54,7 @@ public class TestWork {
             System.out.println(s[i]);
         }
     }
-    
+
     //@Test
     public void testLinkedList() {
         LinkedList<String> list = new LinkedList<String>();
@@ -64,45 +66,26 @@ public class TestWork {
         list.reverseList();
         list.write();
     }
-    
-    //@Test
-    public void testGraphWithMatrix() {
-        long[][] graph = {{0,1,7,1000,1000},{1,0,1000,4,1},{7,1000,0,1,1000},{1000,4,1,0,1},{1000,1,1000,1,0}};
-        long[][] paths = new long[5][5];
-        Floyd.calculate(graph, paths);
-        for (int i=0;i<graph.length;i++) {
-            for (int j=0;j<graph.length;j++) {
-                System.out.print(graph[i][j]+ " ");
-            }
-            System.out.println();
-        }
-            System.out.println();
-            System.out.println();
-        for (int i=0;i<paths.length;i++) {
-            for (int j=0;j<paths.length;j++) {
-                System.out.print(paths[i][j]+ " ");
-            }
-            System.out.println();
-        }
-    }
-    
+
+
     //@Test
     public void testPQ() {
         //Integer[] arr = {14,8,7,13,12,11,15,4,3,10,9,6,5,2,1,0};
         MinPriorityQueue<Integer> pq = new MinPriorityQueue(10);
-        pq.add(new Integer(3)); 
-        pq.add(new Integer(4)); 
-        pq.add(new Integer(5)); 
-        pq.add(new Integer(0)); 
-        pq.add(new Integer(8)); 
-        pq.add(new Integer(1)); 
-        pq.add(new Integer(2)); 
-        pq.add(new Integer(6)); 
-        pq.add(new Integer(7)); 
-        pq.add(new Integer(9)); 
+        pq.add(new Integer(3));
+        pq.add(new Integer(4));
+        pq.add(new Integer(5));
+        pq.add(new Integer(0));
+        pq.add(new Integer(8));
+        pq.add(new Integer(1));
+        pq.add(new Integer(2));
+        pq.add(new Integer(6));
+        pq.add(new Integer(7));
+        pq.add(new Integer(9));
         //pq.write();
-        for (Integer item = pq.popMin(); item!=null; item = pq.popMin()) {
+        for (Integer item = pq.popMin(); item != null; item = pq.popMin()) {
             System.out.println(item);
         }
     }
+
 }
