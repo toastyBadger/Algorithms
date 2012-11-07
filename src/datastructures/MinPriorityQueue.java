@@ -75,6 +75,10 @@ public class MinPriorityQueue<T extends Comparable> {
         return result;
     }
 
+    public boolean isEmpty() {
+        return N < 0;
+    }
+
     public void write() {
         for (int i = 0; i <= N; i++) {
             System.out.print(pq[i] + " ");

@@ -31,6 +31,9 @@ public class Prim {
     
     public void calculateMST() {
         int current = 0;
+        do {
+            
+        } while (!pq.isEmpty());
         
     }
     
