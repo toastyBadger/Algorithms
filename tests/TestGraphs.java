@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import graphs.Dijkstra;
 import graphs.Edge;
 import graphs.Floyd;
 import graphs.Kruskal;
@@ -107,5 +108,25 @@ public class TestGraphs {
 
         Kruskal kruskal = new Kruskal(V, edges);
         kruskal.write();
+    }
+    
+    @Test
+    public void testDijkstra() {
+        int V = 7;
+        int E = 9;
+        LinkedList<Edge>[] adj = new LinkedList[V];
+        for (int i = 0; i < V; i++) {
+            adj[i] = new LinkedList();
+        }
+        int[] from = {0, 0, 0, 5, 2, 2, 3, 1, 4};
+        int[] to = {2, 5, 3, 4, 1, 4, 1, 4, 6};
+        int[] weight = {4, 1, 2, 3, 1, 3, 3, 5, 2};
+        for (int i = 0; i < E; i++) {
+            Edge edge = new Edge(from[i], to[i], weight[i]);
+            adj[from[i]].add(edge);
+            adj[to[i]].add(edge);
+        }
+        Dijkstra d = new Dijkstra(V, adj, 0);
+        d.write();
     }
 }
