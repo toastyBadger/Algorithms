@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import combinatorics.Permutations;
 import graphs.Floyd;
 import datastructures.LinkedList;
 import datastructures.MinPriorityQueue;
@@ -88,4 +89,9 @@ public class TestWork {
         }
     }
 
+    @Test
+    public void testPermutations() {
+        int[] arr = {1,2,3,4,5};
+        new Permutations(arr);
+    }
 }
