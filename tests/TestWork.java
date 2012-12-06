@@ -4,6 +4,7 @@
  */
 
 import combinatorics.Permutations;
+import datastructures.BinarySearchTree;
 import graphs.Floyd;
 import datastructures.LinkedList;
 import datastructures.MinPriorityQueue;
@@ -93,5 +94,25 @@ public class TestWork {
     public void testPermutations() {
         int[] arr = {1,2,3,4,5};
         new Permutations(arr);
+    }
+    
+    //@Test
+    public void testBST() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.put(10, "a");
+        tree.put(7, "b");
+        tree.put(14, "c");
+        tree.put(5, "d");
+        tree.put(8, "e");
+        tree.put(15, "f");
+        tree.put(3, "g");
+        System.out.println(tree.get(8));
+    }
+    
+    @Test
+    public void testShift() {
+        long a = 15;
+        a = a << 31;
+        System.out.println(a);
     }
 }
